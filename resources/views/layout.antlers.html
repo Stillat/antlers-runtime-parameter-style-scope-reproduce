@@ -1,0 +1,9 @@
+
+{{ collection:articles as="entries" }}
+    {{ taxonomy from="topics" sort="title:asc" as="some_alias" }}
+        {{ entries scope="entry" }}
+        Title: {{ entry.title }}<br />
+        Taxonomy Length: {{ some_alias | length }}<br />
+        {{ /entries  }}
+    {{ /taxonomy }}
+{{ /collection:articles }}
